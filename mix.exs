@@ -1,18 +1,21 @@
-defmodule JudgeJson.MixProject do
+defmodule Rulex.MixProject do
+  @moduledoc """
+  Mix project for Rulex, an Elixir rule engine where rules are map objects.
+  """
   use Mix.Project
 
   @version "1.1.0"
-  @source_url "https://github.com/dderooy/judge_json"
+  @source_url "https://github.com/gondwe/rulex"
 
   def project do
     [
-      app: :judge_json,
+      app: :rulex,
       version: @version,
-      elixir: "~> 1.14",
+      elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      name: "judge_json",
-      description: "An Elixir rule engine where rules are json objects. The judge gives verdicts on any rule matches for a provided json payload.",
+      name: "rulex",
+      description: "An Elixir rule engine where rules are map objects.",
       source_url: @source_url,
       package: package(),
       docs: docs()
@@ -29,11 +32,8 @@ defmodule JudgeJson.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-      {:jason, "~> 1.4"},
-      {:odgn_json_pointer, "~> 3.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:odgn_json_pointer, "~> 3.1"},
+      {:ex_doc, ">= 0.38.0", only: :dev, runtime: false}
     ]
   end
 

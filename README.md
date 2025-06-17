@@ -1,4 +1,4 @@
-# JudgeJson
+# Rulex
 An Elixir rule engine where rules are json objects. The judge gives verdicts on data and returns any matched rules.
 
 ## What and why are rule engines useful?
@@ -22,19 +22,19 @@ Another understated benefit; you can isolate team and company concerns. One team
 
 ## Installation
 
-[Available in Hex](https://hex.pm/packages/judge_json), the package can be installed
-by adding `judge_json` to your list of dependencies in `mix.exs`:
+[Available in Hex](https://hex.pm/packages/rulex), the package can be installed
+by adding `rulex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:judge_json, ">= 1.0.0"}
+    {:rulex, ">= 1.0.0"}
   ]
 end
 ```
 
 ## Quick Start Example
-[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdderooy%2Fjudge_json%2Fmain%2Fnotebook%2Fquick_start.livemd)
+[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgondwe%2Frulex%2Fmain%2Fnotebook%2Fquick_start.livemd)
 
 
 ```elixir
@@ -78,7 +78,7 @@ iex> payload = to_string('
     ]
 }')
 iex>
-iex> results = JudgeJson.evaluate(payload)
+iex> results = Rulex.evaluate(payload)
 iex>
 iex> [
   %{
@@ -104,11 +104,11 @@ iex> [
 ```
 Notes:
 - Returns a list of matched rules with the complete rule json
-- JudgeJson.evaluate/1 and JudgeJson.evaluate/2 take elixir native data format or json binary strings
+- Rulex.evaluate/1 and Rulex.evaluate/2 take elixir native data format or json binary strings
 - charlist is used for readability here and converted to binary string via to_string()
 
 ## Documention and Usage
-Docs can be found at <https://hexdocs.pm/judge_json>
+Docs can be found at <https://hexdocs.pm/rulex>
 
 Judge Json is storage and action agnostic. Ideally you can store/load rules from a DB and evaluate on incoming json payloads. Handler code can then evaluate rules and action however you like. 
 

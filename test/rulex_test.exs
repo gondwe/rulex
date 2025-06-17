@@ -1,6 +1,6 @@
-defmodule JudgeJsonTest do
+defmodule RulexTest do
   use ExUnit.Case
-  doctest JudgeJson
+  doctest Rulex
 
   test "operator test: equals" do
     payload = %{
@@ -23,7 +23,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -49,7 +49,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -75,7 +75,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -101,7 +101,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -127,7 +127,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -153,7 +153,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
 
@@ -177,7 +177,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -203,7 +203,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -229,7 +229,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results == []
   end
 
@@ -251,7 +251,7 @@ defmodule JudgeJsonTest do
       }
     ]
 
-    results = JudgeJson.evaluate(data, rules)
+    results = Rulex.evaluate(data, rules)
     assert results != []
     assert length(results) == 1
   end
@@ -272,7 +272,7 @@ defmodule JudgeJsonTest do
         }
       }
     ]')
-    results = JudgeJson.evaluate(data, rules)
+    results = Rulex.evaluate(data, rules)
     assert results != []
     assert length(results) == 1
 
@@ -315,7 +315,7 @@ defmodule JudgeJsonTest do
               }
           ]
       }')
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
 
@@ -336,7 +336,7 @@ defmodule JudgeJsonTest do
         }
       ]
     }"
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -366,7 +366,7 @@ defmodule JudgeJsonTest do
       }
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
   end
@@ -422,7 +422,7 @@ defmodule JudgeJsonTest do
       ]
     }
 
-    results = JudgeJson.evaluate(payload)
+    results = Rulex.evaluate(payload)
     assert results != []
     assert length(results) == 1
     # dbg(results)

@@ -1,6 +1,6 @@
-defmodule JudgeJson do
+defmodule Rulex do
   @moduledoc """
-  Documentation for `JudgeJson`.
+  Documentation for `Rulex`.
   """
   require JSONPointer
   require Jason

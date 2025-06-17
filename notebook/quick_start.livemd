@@ -2,7 +2,7 @@
 
 ```elixir
 Mix.install([
-  {:judge_json, ">= 1.0.0"}
+  {:rulex, ">= 1.0.0"}
 ])
 ```
 
@@ -51,7 +51,7 @@ payload = to_string(~c"
     ]
 }")
 IO.puts("Your matched rules are:")
-results = JudgeJson.evaluate(payload)
+results = Rulex.evaluate(payload)
 ```
 
 You can also split the data and rules up like:
@@ -85,7 +85,7 @@ rules = to_string(~c"[
     }
 ]")
 IO.puts("Your matched rules are:")
-results = JudgeJson.evaluate(data, rules)
+results = Rulex.evaluate(data, rules)
 ```
 
 You can also pass plain Elixir like:
@@ -115,5 +115,5 @@ rules = [
 ]
 
 IO.puts("Your matched rules are:")
-results = JudgeJson.evaluate(data, rules)
+results = Rulex.evaluate(data, rules)
 ```
